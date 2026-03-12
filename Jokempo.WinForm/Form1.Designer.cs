@@ -35,7 +35,9 @@
             btnPapel = new Button();
             btnTesoura = new Button();
             btnJogar = new Button();
+            txtNome = new TextBox();
             txtJogada = new TextBox();
+            btnJogarNovamente = new Button();
             SuspendLayout();
             // 
             // txtNomeJogador
@@ -103,19 +105,40 @@
             btnJogar.UseVisualStyleBackColor = true;
             btnJogar.Click += btnJogar_Click;
             // 
+            // txtNome
+            // 
+            txtNome.Location = new Point(402, 39);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(245, 23);
+            txtNome.TabIndex = 7;
+            // 
             // txtJogada
             // 
-            txtJogada.Location = new Point(408, 205);
+            txtJogada.Location = new Point(320, 225);
             txtJogada.Name = "txtJogada";
-            txtJogada.Size = new Size(245, 23);
-            txtJogada.TabIndex = 7;
+            txtJogada.ReadOnly = true;
+            txtJogada.Size = new Size(429, 23);
+            txtJogada.TabIndex = 9;
+            txtJogada.TextAlign = HorizontalAlignment.Center;
+            // 
+            // btnJogarNovamente
+            // 
+            btnJogarNovamente.Location = new Point(471, 183);
+            btnJogarNovamente.Name = "btnJogarNovamente";
+            btnJogarNovamente.Size = new Size(122, 25);
+            btnJogarNovamente.TabIndex = 10;
+            btnJogarNovamente.Text = "Jogar Novamente";
+            btnJogarNovamente.UseVisualStyleBackColor = true;
+            btnJogarNovamente.Click += btnJogarNovamente_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(942, 450);
+            Controls.Add(btnJogarNovamente);
             Controls.Add(txtJogada);
+            Controls.Add(txtNome);
             Controls.Add(btnJogar);
             Controls.Add(btnTesoura);
             Controls.Add(btnPapel);
@@ -138,6 +161,8 @@
         private Button btnPapel;
         private Button btnTesoura;
         private Button btnJogar;
+        private TextBox txtNome;
         private TextBox txtJogada;
+        private Button btnJogarNovamente;
     }
 }
