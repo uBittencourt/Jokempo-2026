@@ -5,51 +5,18 @@ namespace Jokempo.WinForm
     public partial class Form1 : Form
     {
         private List<Jogador> jogadores = new();
-        private string jogada = "";
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            Jogador jogador = new Jogador(txtNomeJogador.Text);
-            jogadores.Add(jogador);
-            listJogadores.Items.Add(jogador.Nome);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            jogada = "Pedra";
-            txtJogada.Text = $"Você escolheu {jogada}";
-        }
-
-        private void btnPapel_Click(object sender, EventArgs e)
-        {
-            jogada = "Papel";
-            txtJogada.Text = $"Você escolheu {jogada}";
-        }
-
-        private void btnTesoura_Click(object sender, EventArgs e)
-        {
-            jogada = "Tesoura";
-            txtJogada.Text = $"Você escolheu {jogada}";
-        }
-
-        private void btnJogar_Click(object sender, EventArgs e)
-        {
-            int indiceJogador = ValidarJogador(txtNome.Text);
-            string resultado = Rodada.RealizarRodada(jogada, jogadores[indiceJogador]);
-            txtJogada.Text = resultado;
-        }
 
         // FAZER VALIDAÇÃO DE NOME E VERIFICAR SE JÁ EXISTE NA LISTA
         private int ValidarJogador(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
             {
-                txtNome.Text = "Por favor, digite um nome válido!";
                 return -1;
             }
             else
@@ -66,10 +33,22 @@ namespace Jokempo.WinForm
             }
         }
 
-        private void btnJogarNovamente_Click(object sender, EventArgs e)
+        private void btnSalvarJogador_Click(object sender, EventArgs e)
         {
-            jogada = "";
-            txtJogada.Text = "";
+            int indiceJogador = ValidarJogador(txtNome.Text);
+            if (indiceJogador == -1)
+            {
+                txtNome.Text = "";
+                lblErroJogador.Text = "Por favor, digite um nome válido!";
+            } 
+            else
+            {
+                txtNome.Text = "";
+                this.Hide();
+                Form2 form2 = new Form2(jogadores, indiceJogador);
+                form2.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

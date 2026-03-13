@@ -20,19 +20,19 @@ namespace Jokempo.Core.Models
             if (jogada == opcaoPC)
             {
                 jogador.Dados.RegistrarEmpate();
-                resultado = $"Empate, não foi dessa vez! O computador também escolheu {opcaoPC}.";
+                resultado = $"EMPATE, não foi dessa vez! O computador também escolheu {opcaoPC}.";
             }
             else if ((jogada == "Pedra" && opcaoPC == "Tesoura") ||
                      (jogada == "Papel" && opcaoPC == "Pedra") ||
                      (jogada == "Tesoura" && opcaoPC == "Papel"))
             {
                 jogador.Dados.RegistrarVitoria();
-                resultado = $"Parabéns, você venceu! O computador escolheu {opcaoPC}.";
+                resultado = $"Parabéns, você VENCEU! O computador escolheu {opcaoPC}.";
             }
             else
             {
                 jogador.Dados.RegistrarDerrota();
-                resultado = $"Que pena, você perdeu! O computador escolheu {opcaoPC}.";
+                resultado = $"Que pena, você PERDEU! O computador escolheu {opcaoPC}.";
             }
             return resultado;
         }
