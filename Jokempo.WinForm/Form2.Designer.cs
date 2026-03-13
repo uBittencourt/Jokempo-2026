@@ -37,12 +37,13 @@
             label2 = new Label();
             lblJogada = new Label();
             btnTrocarJogador = new Button();
+            btnEstatisticas = new Button();
             SuspendLayout();
             // 
             // btnJogarNovamente
             // 
             btnJogarNovamente.Enabled = false;
-            btnJogarNovamente.Location = new Point(129, 263);
+            btnJogarNovamente.Location = new Point(65, 263);
             btnJogarNovamente.Name = "btnJogarNovamente";
             btnJogarNovamente.Size = new Size(122, 25);
             btnJogarNovamente.TabIndex = 17;
@@ -53,7 +54,7 @@
             // btnJogar
             // 
             btnJogar.Enabled = false;
-            btnJogar.Location = new Point(43, 220);
+            btnJogar.Location = new Point(49, 220);
             btnJogar.Name = "btnJogar";
             btnJogar.Size = new Size(429, 37);
             btnJogar.TabIndex = 14;
@@ -63,7 +64,7 @@
             // 
             // btnTesoura
             // 
-            btnTesoura.Location = new Point(350, 160);
+            btnTesoura.Location = new Point(356, 160);
             btnTesoura.Name = "btnTesoura";
             btnTesoura.Size = new Size(122, 34);
             btnTesoura.TabIndex = 13;
@@ -73,7 +74,7 @@
             // 
             // btnPapel
             // 
-            btnPapel.Location = new Point(194, 160);
+            btnPapel.Location = new Point(200, 160);
             btnPapel.Name = "btnPapel";
             btnPapel.Size = new Size(122, 34);
             btnPapel.TabIndex = 12;
@@ -83,7 +84,7 @@
             // 
             // btnPedra
             // 
-            btnPedra.Location = new Point(43, 160);
+            btnPedra.Location = new Point(49, 160);
             btnPedra.Name = "btnPedra";
             btnPedra.Size = new Size(122, 34);
             btnPedra.TabIndex = 11;
@@ -95,7 +96,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 28F, FontStyle.Bold);
-            label1.Location = new Point(159, 59);
+            label1.Location = new Point(165, 59);
             label1.Name = "label1";
             label1.Size = new Size(201, 51);
             label1.TabIndex = 18;
@@ -106,7 +107,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(140, 129);
+            label2.Location = new Point(146, 129);
             label2.Name = "label2";
             label2.Size = new Size(235, 17);
             label2.TabIndex = 19;
@@ -115,7 +116,7 @@
             // lblJogada
             // 
             lblJogada.ForeColor = Color.Black;
-            lblJogada.Location = new Point(43, 302);
+            lblJogada.Location = new Point(49, 302);
             lblJogada.Name = "lblJogada";
             lblJogada.Size = new Size(429, 21);
             lblJogada.TabIndex = 20;
@@ -124,7 +125,7 @@
             // btnTrocarJogador
             // 
             btnTrocarJogador.Enabled = false;
-            btnTrocarJogador.Location = new Point(266, 263);
+            btnTrocarJogador.Location = new Point(202, 263);
             btnTrocarJogador.Name = "btnTrocarJogador";
             btnTrocarJogador.Size = new Size(122, 25);
             btnTrocarJogador.TabIndex = 21;
@@ -132,11 +133,23 @@
             btnTrocarJogador.UseVisualStyleBackColor = true;
             btnTrocarJogador.Click += btnTrocarJogador_Click;
             // 
+            // btnEstatisticas
+            // 
+            btnEstatisticas.Enabled = false;
+            btnEstatisticas.Location = new Point(339, 263);
+            btnEstatisticas.Name = "btnEstatisticas";
+            btnEstatisticas.Size = new Size(122, 25);
+            btnEstatisticas.TabIndex = 22;
+            btnEstatisticas.Text = "Ver Estatísticas";
+            btnEstatisticas.UseVisualStyleBackColor = true;
+            btnEstatisticas.Click += btnEstatisticas_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(529, 450);
+            ClientSize = new Size(529, 408);
+            Controls.Add(btnEstatisticas);
             Controls.Add(btnTrocarJogador);
             Controls.Add(lblJogada);
             Controls.Add(label2);
@@ -163,5 +176,6 @@
         private Label label2;
         private Label lblJogada;
         private Button btnTrocarJogador;
+        private Button btnEstatisticas;
     }
 }

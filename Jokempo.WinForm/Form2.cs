@@ -53,6 +53,7 @@ namespace Jokempo.WinForm
             btnTesoura.Enabled = false;
             btnJogarNovamente.Enabled = true;
             btnTrocarJogador.Enabled = true;
+            btnEstatisticas.Enabled = true;
             string resultado = Rodada.RealizarRodada(jogada, jogadores[indiceJogador]);
             if (resultado.Contains("VENCEU!"))
             {
@@ -73,6 +74,7 @@ namespace Jokempo.WinForm
         {
             btnJogarNovamente.Enabled = false;
             btnTrocarJogador.Enabled = false;
+            btnEstatisticas.Enabled = false;
             btnPedra.Enabled = true;
             btnPapel.Enabled = true;
             btnTesoura.Enabled = true;
@@ -84,6 +86,14 @@ namespace Jokempo.WinForm
         private void btnTrocarJogador_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEstatisticas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 form3 = new Form3(jogadores);
+            form3.ShowDialog();
+            this.Show();
         }
     }
 }
